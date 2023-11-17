@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++ -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/CPSC_3500_TCP_Sockets.dir/client-tcp-skeleton.cpp.o CMakeFiles/CPSC_3500_TCP_Sockets.dir/server-tcp-skeleton.cpp.o -o CPSC_3500_TCP_Sockets 
