@@ -1,0 +1,28 @@
+Author: Jared Callero
+
+Threads:
+Format:
+Thread name(Function name): purpose
+
+North Producer (producerN): made to produce cars and put them in the north queue
+North Consumer (consumerN): Made to take thread_ids from the north queue and allow them to pass 
+South Producer (producerS): Made to produce cars and put them in the south queue
+South Consumer (consumerS): Made to take thread_ids from the south queue and allow them to pass 
+car(car): made to record entry, start, and pass time to the log
+main(main): starts the threads and initializes the semaphores
+
+Semaphores:
+emptyS(10): how many empty spots in the south lane
+fullS(0): how many full spots are in the south lane
+emptyN(10): How many empty spots in the north lane
+fullN(0): how many full spots are in the north lane
+
+Mutex_locks:
+mutexN: TO prevent the consumerN and ProducerN from accessing the north queue at the same time
+mutexS: to prevent the consumerS and ProducerS from accessing the south queue at the same time
+
+Strengths:
+Nothing
+
+Weaknesses:
+everything

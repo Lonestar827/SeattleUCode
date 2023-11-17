@@ -1,0 +1,9 @@
+~~~~~
+Author: Jared Callero
+Program Name: myshell
+~~~
+
+Current Functions: Only one command at a time, no piping due to time and learning restrictions
+
+Strengths: Does one command with arguments
+Weaknesses: it does nothing else
