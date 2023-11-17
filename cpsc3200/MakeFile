@@ -1,0 +1,14 @@
+p2:p2.o infest.o gridFlea.o
+	g++ p2.cpp infest.cpp infest.h gridflea.cpp gridFlea.h -o p2
+
+p2.o:p2.cpp
+	g++ -c -pedantic -Wall -Werror p2.cpp
+
+infest.o:infest.cpp infest.h
+	g++ -c -pedantic -Wall -Werror infest.cpp
+
+gridFlea.o: gridFlea.cpp gridFlea.h
+	g++ -c -pedantic -Wall -Werror gridFlea.cpp
+
+clean:
+	-f p2

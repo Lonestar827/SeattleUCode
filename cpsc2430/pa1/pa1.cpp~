@@ -1,0 +1,57 @@
+//Callero Jared
+//pa1.cpp
+//10/11/2021
+
+//Description: Tests out the CardStack class with various scenarios
+
+//sources: PA1.pdf on canvas, Transitioning to C++ Class section on Canvas
+
+#include "card.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	CardStack c = cardStack();
+
+	c.pop(); //should print "There is no card to pop"
+	c.printStack();
+
+	c.push(3, "diamonds", false);
+	c.push(10, "diamonds", false);
+	c.push(0, "joker", true);
+	c.push(1, "hearts", false);
+	c.push(12, "diamonds", false);
+	 
+	cout << endl;
+
+	cout << "Deck 1 contains:" << endl;
+	c.printStack();
+	//should print the following:
+	//Queen of diamonds
+	//Ace of hearts
+	//Joker
+	//10 of diamonds
+	//3 of diamonds
+
+	cout << "There are " << c.countSuit("diamonds");
+	cout << " diamond(s) on the stack." << endl;
+	//prints "There are 3 diamond(s) on the stack
+
+	CardStack c2 = c;
+
+    //Popping cards
+	cout << "Popping 3 cards off the stack" << endl;
+	c2.pop()->printCard();
+	c2.pop()->printCard();
+	c2.pop()->printCard();
+	
+	//Showing off different decks:
+	cout << "remaining deck 2" << endl;
+	c2.printStack();
+
+    //Other deck:
+	cout << "Other Deck:" << endl;
+	c.printStack();
+
+}
