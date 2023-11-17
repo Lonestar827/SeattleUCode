@@ -1,0 +1,116 @@
+//Jared Callero
+//coffeeCounts.cpp
+//9/11/2021
+
+//Description:read in a file, convert it to a data structure, find the oldest person in the record and print them,
+//find the person who drinks the least amount of coffee, print the entire list of records, sort it alphabetically,
+//then print it again to prove sorting
+
+//assumptions: It will read a file from the database and use that, no user input needed
+
+//Sources :Lab #3 for reading from a file,
+//Lab#5 for the data the program will use
+
+#include <iostream>
+using namespace std;
+#include <fstream>
+
+//global Type Definitions:
+struct coffeeData
+{
+  string name;
+  int age;
+  int coffee;
+};
+
+//global constant definitions:
+  const string FILEN = "/home/fac/sreeder/class/online/lab5input.dat";
+
+int main(){
+  //The Main Function
+
+  
+  //declare variables
+
+  coffeeData list[150]; //coffeeData struct array
+  ifstream fptr; //filestream
+  string newName; //streamed in words
+  coffeeData newData; //coffee data to inset into list
+  int newAge;
+  int newCoffee;
+
+  //read in the file
+
+  fptr.open(FILEN);
+
+  if (fptr.fail()){
+    cout << "file failure...press enter to exit program...";
+    cin.get();
+    return 0;
+  }
+
+  while (fptr >> newName){
+    //assign each read in to a slot in the struct
+    fptr >> newAge;
+    fptr >> newCoffee;
+
+    //set Data to the coffeeData
+    newData.name = newName;
+    newData.age = newAge;
+    newData.coffee = newCoffee;
+
+    ///put coffeeData into array
+    coffeeData[i] = newCoffee;
+
+    //iterate up
+    i++
+
+  }
+
+  //close the file
+  fptr.close();
+
+  //findOld(list);
+  //findLeastCoffee(list);
+  printAllRecords(list);
+  //list = alphaSortRecords(list);
+  //printAllRecords(list);
+
+  return 0;
+  
+}
+
+//void findOld(coffeeData[] data){
+  //finds the oldest person and prints their record from the data given
+
+   //index
+   // The index of the oldest coffee drinker in the data
+  
+  
+//}
+
+//void findLeastCoffee(coffeeData[] data){
+  //find the person who drinks the least coffee and prints the record from the data given
+  
+//}
+
+void printRecord(coffeeData record){
+  //prints the provided record
+  cout << "Name: " << record.name << " |Age: " << record.age << " |Coffee Drank: " << record.coffee << endl;
+}
+
+void printAllRecords(coffeeData[] data){
+  //prints all the records with the data provided in order
+  for (unsigned int a = 0; a < sizeof(data); a = a + 1)
+    {
+
+      printRecord(data[a]);
+
+    }
+
+}
+
+//coffeeData* alphaSortRecords(coffeeData[] data){
+  //alphabetically sorts the records and returns the data back
+
+  //}
