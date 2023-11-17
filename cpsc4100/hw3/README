@@ -1,0 +1,17 @@
+Name: Jared Callero
+
+
+CreateBalancedBST:
+    Big-O: n, you have to go through the provided array in order to fully put the tree together.
+
+zigzagLevelTraversal:
+    Big-O: n, you have to go through the whole tree to record all the data, before listing them off, so before simplification its 2n
+
+gap:
+    Big-O: log(n), both targets could be on the bottom level, so before simplification its 2log(n)
+
+pathSum:
+    Big-O: log(n), both targets could be on the bottom level, so before simplification its 2log(n)
+
+kthLargest:
+    Big-O: log(n), because it could be at the bottom of the tree.

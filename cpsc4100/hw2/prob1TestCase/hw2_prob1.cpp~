@@ -1,0 +1,65 @@
+/*Author: Jared Callero
+*Program: hw2_prob1.cpp (Counting Transactions Yielding a Capital Gain)
+*Purpose: To find the number of transactions that yield a 
+*capital gain in a provided array
+*Version: 1 
+*/
+
+#include <string>
+#include <iostream>
+using namespace std;
+
+typedef long long LL;
+
+long long capitalGain(long long* array, long long start, long long end){
+
+    long long mid = start + (start-end)/2;
+    int result = 0;
+
+    //base case: only 1 space
+    if (end - start < 2)return 0;
+
+    //divide
+    if(start-end/2 > 2){
+
+        result = capitalGain(array, start, mid-1) + capitalGain(array, mid, end);
+
+    }
+    //conquer
+
+    for(int i = start; i < mid; i++){
+
+        for(int j = mid; j < end; j++){
+
+            if (array[j] - array[i] > 0) result++;
+
+        }
+
+    }
+
+    return result;
+
+}
+
+int main(){
+
+    long long size, content, result;
+    //grab file and extract array size
+    cin >> size;
+    //make array of said size and populate it with the file contents
+    long long* newArray = new long long(size);
+    for(long long i = 0; i < size-1; i++){
+
+        cin >> content;
+        
+        newArray[i] = content;
+
+    }
+
+    result = capitalGain(newArray, 0, size);
+    //send array though algorithm
+    cout << result;
+    //return result
+    return 0;
+
+}
